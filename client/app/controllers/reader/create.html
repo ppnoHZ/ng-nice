@@ -1,0 +1,36 @@
+<form action="">
+    <div>
+        <label for="_email">邮箱</label>
+        <input type="email" id="_email" ng-model="vm.form.email">
+    </div>
+    <div>
+        <label for="_nickname">昵称</label>
+        <input type="text" id="_nickname" ng-model="vm.form.nickname">
+    </div>
+    <div>
+        <label for="_password">密码</label>
+        <input type="password" id="_password"  ng-model="vm.form.password">
+    </div>
+    <div>
+        <label for="_retypedPassword">确认密码</label>
+        <input type="password" id="_retypedPassword" ng-model="vm.form.retypedPassword">
+    </div>
+
+    <div>
+        <label for="_captcha">图形验证码</label>
+        <input type="text" id="_captcha" ng-model="vm.form.captcha">
+        <img src="" alt="图形验证码">
+    </div>
+
+    <div>
+        <input id="_accepted" type="checkbox"  ng-model="vm.form.accepted">
+        <label for="_accepted">
+            我已阅读并同意
+            
+            <a href="">用户服务协议</a>
+        </label>
+    </div>
+    <div>
+        <button type="submit">提交</button>
+    </div>
+</form>

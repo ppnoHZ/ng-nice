@@ -1,0 +1,30 @@
+{
+  "name": "app",
+  "authors": [
+    "zhoudd-mac <zhoudd@stark.tm>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "^1.5.9",
+    "angular-ui-router": "^0.3.2",
+    "angular-resource": "^1.5.9",
+    "moment": "^2.17.0",
+    "underscore": "^1.8.3",
+    "angular-bootstrap": "^2.3.0",
+    "angular-cookies": "^1.5.9",
+    "angular-touch": "^1.5.9",
+    "angular-sanitize": "^1.5.9",
+    "jquery": "^3.1.1",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.7"
+  }
+}
