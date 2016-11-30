@@ -1,4 +1,4 @@
-<form action="">
+<form ng-submit="vm.submit(vm.form)">
     <div>
         <label for="_email">邮箱</label>
         <input type="email" id="_email" ng-model="vm.form.email">
@@ -9,7 +9,7 @@
     </div>
     <div>
         <label for="_password">密码</label>
-        <input type="password" id="_password"  ng-model="vm.form.password">
+        <input type="password" id="_password" ng-model="vm.form.password">
     </div>
     <div>
         <label for="_retypedPassword">确认密码</label>
@@ -23,7 +23,7 @@
     </div>
 
     <div>
-        <input id="_accepted" type="checkbox"  ng-model="vm.form.accepted">
+        <input id="_accepted" type="checkbox" ng-model="vm.form.accepted">
         <label for="_accepted">
             我已阅读并同意
             
