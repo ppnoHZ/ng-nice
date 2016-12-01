@@ -1,7 +1,8 @@
 var koa = require('koa');
+var router = require('koa-frouter');
+var config=require('config-lite');
 
 var app = koa();
-
 
 app.use(function* (next) {
     var start = new Date;
@@ -28,4 +29,8 @@ app.use(function* () {
 
 });
 
-app.listen(3030)
+app.use(router(app,'routes'))
+
+app.listen(config.port,function(){
+    console.log('listen on 3030')
+})
