@@ -1,11 +1,21 @@
-<form ng-submit="vm.submit(vm.form)">
+<style>
+    .css-form input.ng-invalid.ng-touched {
+        background-color: #FA787E
+    }
+    
+    .css-form input.ng-valid.ng-touched {
+        background-color: #78FA89
+    }
+</style>
+<form name="form" ng-submit="vm.submit(vm.form)" novalidate class="css-form">
     <div>
         <label for="_email">邮箱</label>
-        <input type="email" id="_email" ng-model="vm.form.email">
+        <input bf-field-error type="email" id="_email" ng-model-options="{updateOn:'blur'}" required ng-model="vm.form.email">
     </div>
     <div>
         <label for="_nickname">昵称</label>
-        <input type="text" id="_nickname" ng-model="vm.form.nickname">
+        <input bf-field-error type="text" id="_nickname" ng-model="vm.form.nickname" ng-model-options="{debounce:250}" required>
+        {{vm.form.nickname}}
     </div>
     <div>
         <label for="_password">密码</label>
@@ -13,7 +23,7 @@
     </div>
     <div>
         <label for="_retypedPassword">确认密码</label>
-        <input type="password" id="_retypedPassword" ng-model="vm.form.retypedPassword">
+        <input bf-field-error bf-assert-same-as="vm.form.password" type="password" id="_retypedPassword" ng-model="vm.form.retypedPassword">
     </div>
 
     <div>
