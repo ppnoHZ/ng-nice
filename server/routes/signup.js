@@ -12,6 +12,6 @@ exports.post = function* () {
         this.body = { error: true, msg: '名称已经存在' };
     } else {
         yield $User.addUser(data);
-        this.body = 'user add'
+        this.body = { error: false, msg: '名称不存在' };
     }
 }

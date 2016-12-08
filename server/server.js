@@ -3,16 +3,22 @@ var router = require('koa-frouter');
 var config = require('config-lite');
 var bodyparser = require('koa-bodyparser');
 var logger = require('koa-logger');
-
+var cors=require('koa-cors');
 var app = koa();
 
 //将参数转化为 body对象。
 app.use(bodyparser());
 app.use(logger());
 
-
+app.use(cors())
 
 app.use(function* (next) {
+
+
+
+    // this.response.header('Access-Control-Allow-Origin',"*");
+    // this.response.header('Access-Control-Allow-Method',"PUT,POST,GET,DELETE,OPTIONS");
+    
     console.log("------------------------begin------------------------");
 
     var start = new Date;

@@ -14,8 +14,7 @@
     </div>
     <div>
         <label for="_nickname">昵称</label>
-        <input bf-field-error type="text" id="_nickname" ng-model="vm.form.nickname" ng-model-options="{debounce:250}" required>
-        {{vm.form.nickname}}
+        <input bf-field-error="{nicknameCheck:'昵称已经存在'}" bf-check-exists type="text" id="_nickname" ng-model="vm.form.nickname" ng-model-options="{debounce:250}" required>        {{vm.form.nickname}}
     </div>
     <div>
         <label for="_password">密码</label>
@@ -23,7 +22,8 @@
     </div>
     <div>
         <label for="_retypedPassword">确认密码</label>
-        <input bf-field-error bf-assert-same-as="vm.form.password" type="password" id="_retypedPassword" ng-model="vm.form.retypedPassword">
+        <input  bf-assert-same-as="vm.form.password" bf-field-error="{same:'自定义错误消息'}" type="password" id="_retypedPassword"
+            ng-model="vm.form.retypedPassword">
     </div>
 
     <div>
