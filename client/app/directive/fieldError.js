@@ -17,12 +17,18 @@ angular.module('com.ngnice.app')
                 }
                 scope.customErrorMsg = scope.$eval(attrs.bfFieldError);
 
-                var hint = $compile('<ul ng-if="hasError()||pending()"><li ng-if="panding" ng-repeat="(name,panding) in pending()">{{name|PendingMsg}}</li><li ng-repeat="(name,wrong) in errors()" ng-if="wrong">{{name | error:customErrorMsg}}</li>  </ul>')(scope);
+                var hint = $compile('<ul ng-if="hasError()||pending()">\
+                                        <li ng-if="panding" ng-repeat="(name,panding) in pending()">{{name|PendingMsg}}</li>\
+                                        <li ng-repeat="(name,wrong) in errors()" ng-if="wrong">{{name | error:customErrorMsg}}</li>\
+                                    </ul>')(scope);
 
                 element.after(hint);
             }
         }
     })
+    /**
+     * 同步自定义表单验证
+     */
     .directive("bfAssertSameAs", function () {
         return {
             restrict: "A",
@@ -43,6 +49,9 @@ angular.module('com.ngnice.app')
             }
         }
     })
+    /**
+     * 异步自定义表单验证
+     */
     .directive('bfCheckExists', function ($q, $http, $timeout) {
         return {
             restrice: "A",
