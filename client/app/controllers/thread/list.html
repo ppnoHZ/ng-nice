@@ -1,0 +1,23 @@
+<div>
+    <label for="_keyword">
+        过滤条件
+    </label>
+    <input type="text" id="_keyword" placeholder="请输入主题，作者或者发帖时间" ng-model="vm.filter.$">
+    {{vm.filter}}
+    <table>
+        <thead>
+            <tr>
+                <th>标题</th>
+                <th>作者</th>
+                <th>发帖时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in vm.items |filter:vm.filter">
+                <td>{{item.title}}</td>
+                <td>{{item.poster}}</td>
+                <td>{{item.dataCreate}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

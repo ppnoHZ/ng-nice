@@ -23,3 +23,24 @@ angular.module('com.ngnice.app')
         // same: '两次输入的不一样',
 
     })
+    .filter('length', function () {
+        return function (text) {
+            return ("" + (text || '')).length
+        }
+    })
+    .filter('page', function () {
+        return function (input, page, pageSzie) {
+            if (!input) {
+                return input
+            }
+            if (page < 0 || pageSzie <= 0) {
+                return [];
+            }
+
+            var start = page * pageSzie;
+
+            var end = (page + 1) * pageSzie;
+
+            return input.slice(start, end);
+        }
+    })
